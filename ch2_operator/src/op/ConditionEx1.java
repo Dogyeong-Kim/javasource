@@ -1,7 +1,7 @@
 package op;
 
 
-
+// 삼항연산자 : 조건 ? 참일때 : 거짓일때;
 
 public class ConditionEx1 {
     public static void main(String[] args) {
