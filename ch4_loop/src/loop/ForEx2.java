@@ -4,7 +4,7 @@ package loop;
 // 반복적으로 실행해야 하는 코드를 간단하게 처리
 
 // 안녕하세요 10번 출력
-public class ForEx2{
+public class ForEx2 {
     public static void main(String[] args) {
         // 반복문 중단 : 강제 중단(break) or 조건이 false
         // 1) int i = 0; 초기화(한번만 실행)
@@ -16,7 +16,7 @@ public class ForEx2{
         // 7) 증감연산자 실행 i++ (i = 2)
         // 8) 5) ~ 7) 반복
         // ..... 증감연산자 실행 i++ (i = 5)
-        //       조건검사 5 < 5 루프 중단
+        // 조건검사 5 < 5 루프 중단
         for (int i = 1; i < 11; i++) {
             System.out.print(i + "   ");
         }
@@ -43,5 +43,14 @@ public class ForEx2{
         for (int i = 2; i < 11; i += 2) {
             System.out.print(i + "   ");
         }
+
+        int i = 0;
+        for (int j = 0, k = 1; i < args.length; i++) {
+
+        }
+
+        // for (; ; ) {
+
+        // }
     }
 }
