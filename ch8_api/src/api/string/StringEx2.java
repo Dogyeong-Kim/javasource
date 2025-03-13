@@ -34,7 +34,7 @@ public class StringEx2 {
         char[] result = str.toCharArray();
 
         // 존재하면 인덱스 반환 / 존재 안하면 -1
-        System.out.println("주어진 문자가 문자열에 존재하는지 여부 " + str.indexOf("안"));
+        System.out.println("주어진 문자가 문자열에 존재하는지 여부 " + str.indexOf("세"));
         System.out.println("주어진 문자가 문자열에 존재하는지 여부 " + str.indexOf("반"));
 
         System.out.println("주어진 문자가 문자열에 존재하는지 여부 " + str.contains("안"));

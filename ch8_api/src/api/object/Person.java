@@ -9,6 +9,14 @@ public class Person {
         this.name = name;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof Person) {
