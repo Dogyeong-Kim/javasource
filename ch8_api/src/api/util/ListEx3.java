@@ -16,7 +16,7 @@ public class ListEx3 {
         list.add(new Person("hwang12", "황길동"));
 
         for (Person person : list) {
-            System.out.println(person); // persom.toString()
+            System.out.println(person); // person.toString()
         }
 
         // 아이디 이름
