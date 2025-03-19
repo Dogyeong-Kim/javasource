@@ -40,18 +40,18 @@ public class Account {
     // return balance;
     // }
 
-    // // 기능 : 예금하다(잔액 = 잔액 + 예금액), 출금하다(잔액 = 잔액 - 출금액)
-    // // deposit withdraw
-    // void deposit(long amount) {
-    // balance += amount;
-    // }
+    // 기능 : 예금하다(잔액 = 잔액 + 예금액), 출금하다(잔액 = 잔액 - 출금액)
+    // deposit withdraw
+    void deposit(long amount) {
+        balance += amount;
+    }
 
-    // void withdraw(long amount) {
-    // // 인출액이 잔액보다 작으면 출금
-    // if (amount > balance)
-    // return;
-    // balance -= amount;
-    // }
+    void withdraw(long amount) {
+        // 인출액이 잔액보다 작으면 출금
+        if (amount > balance)
+            return;
+        balance -= amount;
+    }
 
     // // toString
     // @Override
