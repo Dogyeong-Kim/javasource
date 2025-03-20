@@ -1,0 +1,18 @@
+스트림
+- 컬렉션(배열 포함)의 저장 요소를 하나씩 참조해서 람다식으로 처리할 수 있도록 도와주는 반복자
+- 내부반복자 사용
+- 중간처리(매핑, 필터링, 정렬)와 최종처리(반복 카운팅, 합계, 평균)
+- 한 번 소비(최종처리)되면 재 생성해야 함
+
+-- 중간처리
+1) filter() : 조건필터링
+2) distinct() : 중복제거
+3) map(Function<T, R> mapper) : 스트림의 요소를 반환
+   mapToInt(ToIntFunction<? super Member> mapper) : R 타입이 int
+   mapToLong(ToIntFunction<? super Member> mapper) : R 타입이 long
+   mapToDouble(ToIntFunction<? super Member> mapper) : R 타입이 double
+
+
+-- 최종처리
+1) forEach()
+2) collect()
