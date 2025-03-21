@@ -11,8 +11,25 @@
    mapToInt(ToIntFunction<? super Member> mapper) : R 타입이 int
    mapToLong(ToIntFunction<? super Member> mapper) : R 타입이 long
    mapToDouble(ToIntFunction<? super Member> mapper) : R 타입이 double
+4) skip() : 스트림 일부를 잘라낼 때 사용
+5)limit() : 스트림의 일부를 잘라낼 때 사용
+6) peek() : 중간연산 확인
 
 
 -- 최종처리
 1) forEach()
 2) collect()
+3) count()/ sum()/ average()/ max()/ min()
+
+
+-- Optional<T>
+- 최종 연산의 결과를 Optional 객체에 담아서 반환
+- 반환된 결과가 null 인지 매번 if 문으로 체크하는 대신 Optional에 정의된
+  메소드를 통해서 간단히 처리할 수 있다
+- Optional 객체 값 가져오기 : get()
+- 널일때 반환값 지정 : orElse()
+- 널일때 false, 아닐때 true : isPresent()
+- 널일때 아무일도 안함, 아닐때 람다식 실행 : ifPresent(Consumer)
+
+OptionalDouble
+OptionalInt
