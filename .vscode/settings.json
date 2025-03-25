@@ -1,6 +1,7 @@
 {
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "ch6_oop/lib/lombok.jar"
+        "ch6_oop/lib/lombok.jar",
+        "c:\\app\\soldesk\\product\\21c\\dbhomeXE\\jdbc\\lib\\ojdbc11.jar"
     ]
 }
