@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class EmpDAO {
     private Connection con = null;
@@ -56,6 +58,67 @@ public class EmpDAO {
     }
 
     // select insert, update, delete 처리 메소드
+    public List<EmpDTO> selectAll() {
+
+        con = getConnection();
+        String sql = "SELECT * FROM EMP_TEMP";
+        List<EmpDTO> list = new ArrayList<>();
+
+        try {
+            pstmt = con.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+
+            // rs 객체에 담긴 결과를 옮기기 => DTO
+            while (rs.next()) {
+                EmpDTO eDto = new EmpDTO();
+                eDto.setEmpNo(rs.getInt("empNo"));
+                eDto.setEName(rs.getString("EName"));
+                eDto.setJob(rs.getString("Job"));
+                eDto.setMgr(rs.getInt("Mgr"));
+                eDto.setHireDate(rs.getString("hiredate"));
+                eDto.setSal(rs.getInt("Sal"));
+                eDto.setComm(rs.getInt("Comm"));
+                eDto.setDeptNo(rs.getInt("DeptNo"));
+                list.add(eDto);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            close(con, pstmt, rs);
+        }
+        return list;
+    }
+
+    public EmpDTO select(int empNo) {
+        con = getConnection();
+        String sql = "SELECT * FROM EMP_TEMP WHERE EMPNO = ?";
+        EmpDTO eDto = null;
+        try {
+            pstmt = con.prepareStatement(sql);
+            // ? 해결
+            pstmt.setInt(1, empNo);
+            rs = pstmt.executeQuery();
+
+            // rs 객체에 담긴 결과를 옮기기 => DTO
+            if (rs.next()) {
+                eDto = new EmpDTO();
+                eDto.setEmpNo(rs.getInt("empNo"));
+                eDto.setEName(rs.getString("EName"));
+                eDto.setJob(rs.getString("Job"));
+                eDto.setMgr(rs.getInt("Mgr"));
+                eDto.setHireDate(rs.getString("hiredate"));
+                eDto.setSal(rs.getInt("Sal"));
+                eDto.setComm(rs.getInt("Comm"));
+                eDto.setDeptNo(rs.getInt("DeptNo"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            close(con, pstmt, rs);
+        }
+        return eDto;
+    }
+
     public int insert(EmpDTO eDto) {
         con = getConnection();
         int result = 0;
